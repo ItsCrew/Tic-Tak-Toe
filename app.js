@@ -111,7 +111,7 @@ const checkWinner = () => {
 
     if (pos1val != "" && pos2val != "" && pos3val != "") {
       if (pos1val === pos2val && pos2val === pos3val) {
-        console.log("WINNER", pos1val);
+        console.log("adawda", pos1val);
         showWinner(pos1val);
       }
     }
