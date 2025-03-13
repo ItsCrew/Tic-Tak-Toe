@@ -1,14 +1,14 @@
-let player1 = "Player 1";
-let player2 = "Player 2";
-let currentPlayer = "X";
-let boxes = document.querySelectorAll(".box");
-let resetBtn = document.querySelector(".reset-btn");
-let newgamebtn = document.querySelector(".new-btn");
-let msgcontainer = document.querySelector(".win-container");
-let msg = document.querySelector(".msg");
+const player1 = "Player 1";
+const player2 = "Player 2";
+const currentPlayer = "X";
+const boxes = document.querySelectorAll(".box");
+const resetBtn = document.querySelector(".reset-btn");
+const newgamebtn = document.querySelector(".new-btn");
+const msgcontainer = document.querySelector(".win-container");
+const msg = document.querySelector(".msg");
 
-let turnO = true;
-let count = 0;
+const turnO = true;
+const count = 0;
 
 const winpatterns = [
   [0, 1, 2],
@@ -39,7 +39,7 @@ const setPlayerNames = () => {
 };
 
 const updatedisplay = () => {
-  let curplayer = document.querySelector("#current-player");
+  const curplayer = document.querySelector("#current-player");
   curplayer.textContent = `Current Player = ${
     currentPlayer === "X" ? player1 : player2
   }`;
@@ -68,7 +68,7 @@ boxes.forEach((box) => {
       turnO = !turnO;
       count++;
 
-      let won = checkWinner();
+      const won = checkWinner();
 
       if (count === 9 && !won) {
         draw();
@@ -79,13 +79,13 @@ boxes.forEach((box) => {
 });
 
 const disablebox = () => {
-  for (let box of boxes) {
+  for (const box of boxes) {
     box.disabled = true;
   }
 };
 
 const enablebox = () => {
-  for (let box of boxes) {
+  for (const box of boxes) {
     box.disabled = false;
     box.innerText = "";
   }
@@ -104,14 +104,14 @@ const showWinner = (winner) => {
 };
 
 const checkWinner = () => {
-  for (let pattern of winpatterns) {
-    let pos1val = boxes[pattern[0]].innerText;
-    let pos2val = boxes[pattern[1]].innerText;
-    let pos3val = boxes[pattern[2]].innerText;
+  for (const pattern of winpatterns) {
+    const pos1val = boxes[pattern[0]].innerText;
+    const pos2val = boxes[pattern[1]].innerText;
+    const pos3val = boxes[pattern[2]].innerText;
 
     if (pos1val != "" && pos2val != "" && pos3val != "") {
       if (pos1val === pos2val && pos2val === pos3val) {
-        console.log("WINNER", pos1val);
+        console.log("WINawawdawdNER", pos1val);
         showWinner(pos1val);
       }
     }
