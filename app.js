@@ -6,6 +6,8 @@ let resetBtn = document.querySelector(".reset-btn");
 let newgamebtn = document.querySelector(".new-btn");
 let msgcontainer = document.querySelector(".win-container");
 let msg = document.querySelector(".msg");
+const header = document.querySelector("header");
+const main = document.querySelector("main");
 
 let turnO = true;
 let count = 0;
@@ -35,6 +37,8 @@ const setPlayerNames = () => {
 
   document.querySelector("#player1-display").textContent = player1;
   document.querySelector("#player2-display").textContent = player2;
+  header.style.display = "none";
+  main.style.display = "block";
   updatedisplay();
 };
 
@@ -50,6 +54,7 @@ const resetGame = () => {
   count = 0;
   enablebox();
   msgcontainer.classList.add("hide");
+  main.style.display = "block";
   updatedisplay();
 };
 
@@ -94,6 +99,7 @@ const enablebox = () => {
 const draw = () => {
   msg.innerText = "Game was a draw";
   msgcontainer.classList.remove("hide");
+  main.style.display = "none";
   disablebox();
 };
 
@@ -113,6 +119,7 @@ const checkWinner = () => {
       if (pos1val === pos2val && pos2val === pos3val) {
         console.log("Winner", pos1val);
         showWinner(pos1val);
+        main.style.display = "none";
       }
     }
   }

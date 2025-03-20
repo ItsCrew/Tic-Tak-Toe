@@ -71,3 +71,15 @@ body {
 .hide {
   display: none;
 }
+
+header {
+  display: block;
+}
+
+main {
+  display: none;
+}
+
+footer {
+  display: none;
+}
