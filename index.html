@@ -12,26 +12,38 @@
       <button class="new-btn">New Game</button>
     </div>
 
+    <h1>Tik Tak Toe</h1>
     <header>
-      <h1>Tik Tak Toe</h1>
-
       <div class="player-names">
-        <input type="text" id="player1" placeholder="Player 1 name here" />
-        <br />
-        <input type="text" id="player2" placeholder="Player 2 name here" />
-        <br />
-        <button onclick="setPlayerNames()">Start the Game!</button>
+        <input
+          type="text"
+          id="player1"
+          class="PlayerInput"
+          placeholder="Player 1 name here"
+        />
+        <span id="vs"><img src="assets/versus.png" /></span>
+        <input
+          type="text"
+          id="player2"
+          class="PlayerInput"
+          placeholder="Player 2 name here"
+        />
       </div>
 
+      <div class="StartButtonContainer">
+        <button onclick="setPlayerNames()" class="StartButton">
+          Start the Game!
+        </button>
+      </div>
+    </header>
+
+    <main>
       <div class="scoreboard">
         <span id="player1-display">Player 1</span> vs
         <span id="player2-display">Player 2</span>
       </div>
 
       <div id="current-player">Current player: Player 1</div>
-    </header>
-
-    <main>
       <div class="container">
         <div class="game">
           <button class="box"></button>

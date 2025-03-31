@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: mono, tex, sans, serif;
 }
 
 body {
@@ -34,6 +35,11 @@ body {
   font-size: 8vmin;
   color: #3d2b56;
   background-color: #4fc7;
+}
+
+.box:hover {
+  background-color: rgba(68, 255, 205, 0.884);
+  transition: 0.2s ease;
 }
 
 .reset-btn {
@@ -82,4 +88,31 @@ main {
 
 footer {
   display: none;
+}
+
+.player-names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 0 0;
+  gap: 10px;
+}
+
+.PlayerInput {
+  text-align: center;
+  height: 100px;
+  border-radius: 20px;
+  font-size: 35px;
+}
+
+.StartButton {
+  height: 90px;
+  width: 40vh;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+#vs img {
+  height: 35vh;
 }
