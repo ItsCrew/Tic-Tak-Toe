@@ -9,11 +9,28 @@ body {
   text-align: center;
 }
 
+header {
+  display: block;
+}
+
+main {
+  display: none;
+}
+
 .container {
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.scoreboard {
+  padding-top: 25px;
+  font-size: 40px;
+}
+
+#current-player {
+  font-size: 25px;
 }
 
 .game {
@@ -51,6 +68,11 @@ body {
   border-radius: 1rem;
 }
 
+.reset-btn:hover {
+  background-color: #244e9c;
+  transition: 0.2s ease;
+}
+
 .new-btn {
   padding: 1rem;
   font-size: 1.25rem;
@@ -58,6 +80,11 @@ body {
   color: white;
   border: none;
   border-radius: 1rem;
+}
+
+.new-btn:hover {
+  background-color: #244e9c;
+  transition: 0.2s ease;
 }
 
 .msg {
@@ -75,18 +102,6 @@ body {
 }
 
 .hide {
-  display: none;
-}
-
-header {
-  display: block;
-}
-
-main {
-  display: none;
-}
-
-footer {
   display: none;
 }
 
@@ -115,4 +130,8 @@ footer {
 
 #vs img {
   height: 35vh;
+}
+
+footer {
+  display: none;
 }

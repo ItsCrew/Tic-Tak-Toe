@@ -9,7 +9,7 @@ let msg = document.querySelector(".msg");
 const header = document.querySelector("header");
 const main = document.querySelector("main");
 
-let turnO = true;
+let turnO = false;
 let count = 0;
 
 const winpatterns = [
@@ -50,7 +50,8 @@ const updatedisplay = () => {
 };
 
 const resetGame = () => {
-  turnO = true;
+  turnO = false;
+  currentPlayer = "X";
   count = 0;
   enablebox();
   msgcontainer.classList.add("hide");
@@ -61,14 +62,14 @@ const resetGame = () => {
 boxes.forEach((box) => {
   box.addEventListener("click", (event) => {
     if (event.target.innerText === "") {
-      if (turnO) {
-        event.target.innerText = "O";
-        event.target.style.color = "green";
-        currentPlayer = "X";
-      } else {
+      if (!turnO) {
         event.target.innerText = "X";
         event.target.style.color = "red";
         currentPlayer = "O";
+      } else {
+        event.target.innerText = "O";
+        event.target.style.color = "green";
+        currentPlayer = "X";
       }
       turnO = !turnO;
       count++;
@@ -104,7 +105,8 @@ const draw = () => {
 };
 
 const showWinner = (winner) => {
-  msg.innerText = `Congratulations, winner is ${winner}`;
+  const winnerName = winner === "X" ? player1 : player2;
+  msg.innerText = `Congratulations ${winnerName}, You won!`;
   msgcontainer.classList.remove("hide");
   disablebox();
 };
